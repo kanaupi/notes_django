@@ -1,6 +1,8 @@
 #このプロジェクトで使っている設定をここに書いて利用できるようにしている。
 
 from pathlib import Path
+#djnagoのherokuデプロイ用
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -125,3 +127,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
  #誰でもAPIリクエストを許可
 CORS_ALLOW_ALL_ORIGINS=True
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
